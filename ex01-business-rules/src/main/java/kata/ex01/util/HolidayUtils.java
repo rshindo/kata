@@ -89,6 +89,10 @@ public class HolidayUtils {
         return HOLIDAYS_OF_WEEK.contains(d.getDayOfWeek()) || holidays.containsKey(d);
     }
 
+    public static boolean isWeekday(LocalDate d) {
+        return !isHoliday(d);
+    }
+
     public static void printHolidays() {
         holidays.entrySet().stream()
                 .sorted(Comparator.comparing(x -> x.getKey()))
